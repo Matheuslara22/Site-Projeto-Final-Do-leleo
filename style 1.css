@@ -1,0 +1,202 @@
+/* === ESTILO GERAL === */ 
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: #0d0d0d;
+    color: #e6e6e6;
+    margin: 0;
+    overflow-x: hidden;
+    animation: fadeIn 1s ease-in;
+}
+
+/* === CABEÇALHO === */
+header {
+    background: linear-gradient(90deg, #1a1a1a, #2e2e2e);
+    color: #e6e6e6;
+    padding: 25px 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    animation: slideDown 0.8s ease-in-out;
+}
+
+header:hover {
+    background: linear-gradient(90deg, #2e2e2e, #3a3a3a);
+    box-shadow: 0 0 22px rgba(0, 157, 255, 0.4);
+}
+
+/* === MENU === */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 18px;
+    position: relative;
+}
+
+nav a {
+    color: #e6e6e6;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 17px;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: #009dff;
+    text-shadow: 0 0 10px rgba(0,157,255,0.6);
+    transform: translateY(-2px);
+}
+
+nav a.ativo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 3px;
+    background: #cc0000;
+    border-radius: 4px;
+}
+
+/* === CONTEÚDO PRINCIPAL === */
+main {
+    padding: 40px 20px;
+    text-align: center;
+    animation: fadeUp 1s ease;
+}
+
+h1, h2, h3 {
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+/* === IMAGENS === */
+.img-destaque {
+    width: 85%;
+    max-width: 720px;
+    border-radius: 18px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.6);
+    margin: 25px 0;
+    transition: 0.5s ease;
+}
+
+.img-destaque:hover {
+    transform: scale(1.07);
+    box-shadow: 0 18px 35px rgba(0,157,255,0.5);
+    filter: brightness(1.1);
+}
+
+/* === LISTAS === */
+ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 19px;
+}
+
+ul li {
+    background: rgba(255, 255, 255, 0.05);
+    margin: 10px auto;
+    padding: 12px 15px;
+    max-width: 600px;
+    border-radius: 12px;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    transition: 0.3s;
+}
+
+ul li:hover {
+    background: rgba(0, 157, 255, 0.15);
+    transform: scale(1.04);
+}
+
+/* === BOTÕES === */
+button {
+    background: linear-gradient(45deg, #cc0000, #ff3b3b);
+    color: white;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    box-shadow: 0 0 22px rgba(255, 0, 0, 0.3);
+    transition: 0.35s ease;
+}
+
+button:hover {
+    transform: scale(1.12);
+    background: linear-gradient(45deg, #a80000, #cc1f1f);
+    box-shadow: 0 0 28px rgba(255, 30, 30, 0.5),
+                0 0 12px rgba(255, 0, 0, 0.7);
+}
+
+/* === RODAPÉ === */
+footer {
+    background: #1a1a1a;
+    color: #e6e6e6;
+    text-align: center;
+    padding: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 45px;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.5);
+}
+
+/* === CAIXA DA CURIOSIDADE (NOVO PREMIUM) === */
+#curiosidade {
+    margin-top: 25px;
+    padding: 18px 22px;
+    background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+    border: 2px solid #2e2e2e;
+    border-radius: 14px;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    color: #b5d9ff;
+    box-shadow: 0 0 15px rgba(0,157,255,0.25);
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+/* HUD automotivo */
+#curiosidade::before {
+    content: "⚡ Curiosidade";
+    display: block;
+    font-size: 14px;
+    color: #009dff;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    opacity: 0.8;
+}
+
+/* === ANIMAÇÕES === */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.fade-out {
+    animation: fadeOut 0.4s ease forwards;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: scale(1); }
+    to { opacity: 0; transform: scale(0.96); }
+}
